@@ -5,9 +5,21 @@ Customized to run out of the box for *CDH4* users.
 
 # Install the hadoop-libhdfs package
 
+For RedHat/CentOS systems:
 ```bash
 $ sudo yum install hadoop-libhdfs
 ```
+
+For Ubuntu/Debian systems:
+```bash
+$ sudo apt-get install hadoop-libhdfs
+```
+
+For SLES systems:
+```bash
+$ sudo zypper install hadoop-libhdfs
+```
+
 # Build & execute the sample C program `test.c`
 
 ```bash
