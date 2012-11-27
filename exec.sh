@@ -1,17 +1,9 @@
-export JAVA_HOME="/usr/lib/jvm/java-6-sun/"
-export HADOOP_SRC_HOME="./hadoop-hdfs/"
-export HADOOP_HOME="/usr/lib/hadoop/" # CDH
-export CXXFLAGS="-O2 -g -Wall -I$HADOOP_SRC_HOME/src/c++/libhdfs/ -I$JAVA_HOME/include/ -I$JAVA_HOME/include/linux/"
-export LDFLAGS="-L$HADOOP_SRC_HOME/build/c++/lib/ -lhdfs -L$JAVA_HOME/jre/lib/amd64/server/ -ljvm"
-export LD_LIBRARY_PATH="$HADOOP_SRC_HOME/build/c++/lib/:$JAVA_HOME/jre/lib/amd64/server/"
-
-CLASSPATH=./
-for f in $HADOOP_HOME/*.jar; do
-  CLASSPATH=${CLASSPATH}:$f;
+source /usr/libexec/bigtop-detect-javahome
+export CLASSPATH=/etc/hadoop/conf
+for file in `ls /usr/lib/hadoop/client/*.jar`
+do
+  export CLASSPATH=$CLASSPATH:$file
 done
-for f in $HADOOP_HOME/lib/*.jar; do
-  CLASSPATH=${CLASSPATH}:$f;
-done
-export CLASSPATH=$CLASSPATH
+export LD_LIBRARY_PATH="$JAVA_HOME/jre/lib/amd64/server/"
 
-(echo r ; cat) | gdb a.out
+./test
