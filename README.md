@@ -1,7 +1,7 @@
 # About
 
 Example program of libhdfs, C(++) library to handle HDFS (Hadoop Distributed File System).
-Customized to run out of the box for *CDH4* users.
+Customized to run out of the box for *CDH* users.
 
 # Install the hadoop-libhdfs package
 
