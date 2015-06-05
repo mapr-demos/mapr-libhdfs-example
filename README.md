@@ -1,23 +1,23 @@
 # About
 
 Example program of libhdfs, C(++) library to handle HDFS (Hadoop Distributed File System).
-Customized to run out of the box for *CDH* users.
+Customized to run out of the box for *MapR* users.
 
-# Install the hadoop-libhdfs package
+# Install the mapr-client
 
 For RedHat/CentOS systems:
 ```bash
-$ sudo yum install hadoop-libhdfs
+$ sudo yum install mapr-client
 ```
 
 For Ubuntu/Debian systems:
 ```bash
-$ sudo apt-get install hadoop-libhdfs
+$ sudo apt-get install mapr-client
 ```
 
 For SLES systems:
 ```bash
-$ sudo zypper install hadoop-libhdfs
+$ sudo zypper install mapr-client
 ```
 
 # Build & execute the sample C program `test.c`
