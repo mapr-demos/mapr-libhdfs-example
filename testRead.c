@@ -12,12 +12,12 @@ main(int argc, char **argv)
   const char* readPath = "/tmp/testfile.txt";
   hdfsFile readFile = hdfsOpenFile(fs, readPath, O_RDONLY, 0, 0, 0);
   if(!readFile) {
-    fprintf(stderr, "Failed to open %s for writing!\n", readPath);
+    fprintf(stderr, "Failed to open %s for reading!\n", readPath);
     exit(-1);
   }
   char buffer[MAXBUFLEN+1];
 
-  int bytes = hdfsRead(fs, readFile, buffer, strlen(buffer));
+  int bytes = hdfsRead(fs, readFile, buffer, sizeof(buffer));
   fprintf(stdout, "Read %d bytes.", bytes);
   buffer[MAXBUFLEN] = '\0';
   hdfsCloseFile(fs, readFile);
