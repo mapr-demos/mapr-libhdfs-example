@@ -18,8 +18,8 @@ main(int argc, char **argv)
   char buffer[MAXBUFLEN+1];
 
   int bytes = hdfsRead(fs, readFile, buffer, sizeof(buffer));
-  fprintf(stdout, "Read %d bytes.", bytes);
   buffer[MAXBUFLEN] = '\0';
+  fprintf(stdout, "Read %d bytes: '%s'", bytes, buffer);
   hdfsCloseFile(fs, readFile);
   return 0;
 }
